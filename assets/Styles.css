@@ -1,0 +1,233 @@
+/* General Reset */
+body, h1, h2, h3, p, ul, li, a, form {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    background-color: #f8f8f8; /* Putih Gading */
+}
+
+/* Header */
+.header {
+    background-color: #fff;
+    border-bottom: 2px solid #d0d0d0; /* Abu-abu Muda */
+    position: relative;
+    z-index: 1000;
+}
+
+.navbar {
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.navbar-brand:hover {
+    color: #d1a656; /* Emas Pucat */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-nav .nav-link {
+    color: #555;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #d1a656; /* Emas Pucat */
+}
+/* Hero Section */
+.hero {
+    text-align: center;
+    background: url("landingpage5.jpg") no-repeat center center/cover;
+    color: #ece9e9;
+    padding: 160px 20px;
+}
+
+.hero h1 {
+    font-size: 64px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 30px;
+    margin-bottom: 30px;
+    color: #f4f4f4d7;
+}
+
+.btn.primary-btn {
+    display: inline-block;
+    padding: 16px 32px;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    background-color: #d1a656; /* Emas Pucat */
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.144);
+}
+
+.btn.primary-btn:hover {
+    background-color: #b88c4e; /* Warna Hover Emas */
+    transform: scale(1.05);
+}
+
+/* Sections */
+.section-title {
+    text-align: center;
+    font-size: 40px;
+    color: #d1a656; /* Emas Pucat */
+    margin: 60px auto;
+    font-weight: 600;
+    border-bottom: 2px solid #d0d0d0; /* Abu-abu Muda */
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+/* Services */
+.services {
+    padding: 40px 20px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    padding: 30px;
+    text-align: left;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+    transform: translateY(-8px);
+}
+
+/* Portfolio */
+.portfolio {
+    padding: 40px 20px;
+    background-color: #f5f5dc; /* Beige */
+}
+
+.portfolio img {
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.portfolio img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* Testimonials */
+.testimonials {
+    padding: 40px 20px;
+}
+
+.testimonial {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    padding: 30px;
+    text-align: center;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.testimonial:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+    transform: translateY(-8px);
+}
+
+/* Contact Form */
+.contact {
+    padding: 40px 20px;
+    background-color: #f5f5dc; /* Beige */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+input, textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: #d1a656; /* Emas Pucat */
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #d1a656; /* Emas Pucat */
+    color: #b88c4e;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #b88c4e; /* Warna Hover Emas */
+    transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar-nav {
+        text-align: center;
+    }
+    
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 22px;
+    }
+
+    .services .card {
+        margin-bottom: 20px;
+    }
+
+    .portfolio img {
+        max-width: 100%;
+    }
+}

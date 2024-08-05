@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcel &co Wedding Organizer</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/Styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a href="index.html" class="navbar-brand logo">Marcel &co</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto nav-links">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Beranda</a></li>
+                    <li class="nav-item"><a href="PAKETCOBA.html" class="nav-link">Paket</a></li>
+                    <li class="nav-item"><a href="Tentang.html" class="nav-link">Tentang</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="hero text-center">
+            <h1>Your Dream Wedding Awaits</h1>
+            <p>Making your special day unforgettable</p>
+            <a href="#contact" class="btn primary-btn">Get Started</a>
+        </div>
+    </header>
+
+    <section id="services" class="services py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-4">Layanan Kami</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h3 class="card-title">Paket Platinum</h3>
+                            <p class="card-text">Perencanaan lengkap dari awal hingga akhir, dengan desain elegan dan koordinasi hari-H sempurna.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h3 class="card-title">Paket Emas</h3>
+                            <p class="card-text">Bantuan dalam sebagian besar proses perencanaan, konsultasi desain, dan koordinasi hari-H.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h3 class="card-title">Paket Perak</h3>
+                            <p class="card-text">Dukungan profesional pada hari pernikahan dengan jadwal terperinci dan manajemen vendor.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h3 class="card-title">Paket Perunggu</h3>
+                            <p class="card-text">Sesi konsultasi dan rekomendasi vendor untuk pasangan yang ingin menangani perencanaan sendiri.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-4">Portofolio Kami</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="img/wedding1.jpg" class="img-fluid mb-4" alt="Wedding 1">
+                </div>
+                <div class="col-md-3">
+                    <img src="img/wedding2.jpg" class="img-fluid mb-4" alt="Wedding 2">
+                </div>
+                <div class="col-md-3">
+                    <img src="img/wedding3.jpg" class="img-fluid mb-4" alt="Wedding 3">
+                </div>
+                <div class="col-md-3">
+                    <img src="img/wedding4.jpg" class="img-fluid mb-4" alt="Wedding 4">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-4">Apa Kata Klien Kami?</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="testimonial p-4 mb-4 bg-light">
+                        <p>"Hari istimewa kami dikelola dengan sangat baik oleh Marcel&Co. Hasilnya luar biasa!"</p>
+                        <span>- Sarah & John</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="testimonial p-4 mb-4 bg-light">
+                        <p>"Kreativitas dan profesionalisme Marcel&Co menjadikan pernikahan kami istimewa. Terima kasih!"</p>
+                        <span>- Emily & Michael</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-4">Kontak Kami</h2>
+            <form action="#" class="w-75 mx-auto">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" class="form-control" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer py-4 bg-dark text-white text-center">
+        <p>&copy; Marcel &co Wedding Organizer. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

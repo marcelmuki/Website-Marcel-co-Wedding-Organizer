@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/invoice.css">
+</head>
+<body>
+    <div class="invoice-container">
+        <h1>Invoice</h1>
+        <div class="invoice-item">
+            <strong>Nama:</strong> <span id="nama"></span>
+        </div>
+        <div class="invoice-item">
+            <strong>Alamat:</strong> <span id="alamat"></span>
+        </div>
+        <div class="invoice-item">
+            <strong>Email:</strong> <span id="email"></span>
+        </div>
+        <div class="invoice-item">
+            <strong>Paket:</strong> <span id="paket"></span>
+        </div>
+        <div class="invoice-item">
+            <strong>Harga:</strong> Rp <span id="harga"></span>
+        </div>
+        <div class="invoice-item">
+            <strong>Tanggal Acara:</strong> <span id="tanggal"></span>
+        </div>
+        <div class="qr-code">
+            <img id="qr-code" alt="QR Code">
+        </div>
+        <!-- Tombol cetak -->
+        <button class="print-button" onclick="printInvoice()">Cetak Invoice</button>
+    </div>
+    <footer>
+        <a href="index.html">Kembali ke Beranda</a>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <script>
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                nama: params.get('nama'),
+                alamat: params.get('alamat'),
+                email: params.get('email'),
+                paket: params.get('paket'),
+                harga: params.get('harga'),
+                tanggal: params.get('tanggal')
+            };
+        }
+
+        function displayInvoice() {
+            const { nama, alamat, email, paket, harga, tanggal } = getQueryParams();
+            document.getElementById('nama').textContent = nama || 'Tidak ada data';
+            document.getElementById('alamat').textContent = alamat || 'Tidak ada data';
+            document.getElementById('email').textContent = email || 'Tidak ada data';
+            document.getElementById('paket').textContent = paket || 'Tidak ada data';
+            document.getElementById('harga').textContent = harga ? ` ${harga}` : 'Tidak ada data';
+            document.getElementById('tanggal').textContent = tanggal || 'Tidak ada data';
+
+            const qr = new QRious({
+                element: document.getElementById('qr-code'),
+                value: `Nama: ${nama || ''}\nAlamat: ${alamat || ''}\nEmail: ${email || ''}\nPaket: ${paket || ''}\nHarga: Rp ${harga || ''}\nTanggal: ${tanggal || ''}`,
+                size: 200
+            });
+        }
+
+        function printInvoice() {
+            window.print();
+        }
+
+        window.onload = displayInvoice;
+    </script>
+</body>
+</html>

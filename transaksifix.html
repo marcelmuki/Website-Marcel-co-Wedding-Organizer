@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Transaksi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/transaksifix.css">
+</head>
+<body>
+    <h1>Input Transaksi</h1>
+    <form id="transaksiForm" onsubmit="submitForm(event)">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" required>
+
+        <label for="alamat">Alamat:</label>
+        <input type="text" id="alamat" name="alamat" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="tanggal">Tanggal Acara:</label>
+        <input type="date" id="tanggal" name="tanggal" required>
+
+        <label for="paket">Paket:</label>
+        <select id="paket" name="paket" required>
+            <option value="Platinum" data-price="50000000">Platinum - Rp 50.000.000</option>
+            <option value="Emas" data-price="25000000">Emas - Rp 25.000.000</option>
+            <option value="Perak" data-price="15000000">Perak - Rp 15.000.000</option>
+            <option value="Perunggu" data-price="10000000">Perunggu - Rp 10.000.000</option>
+        </select>
+
+        <input type="hidden" id="harga" name="harga">
+        <input type="submit" value="Buat Pesanan">
+    </form>
+
+    <div class="qr-code" id="qr-container"></div>
+
+    <footer>
+        <a href="index.html">Kembali ke Beranda</a>
+        <p>&copy; Marcel &co Wedding Organizer. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <script>
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                paket: params.get('paket'),
+                harga: params.get('harga'),
+                tanggal: params.get('tanggal'),
+                nama: params.get('nama'),
+                alamat: params.get('alamat'),
+                email: params.get('email')
+            };
+        }
+
+        function prefillForm() {
+            const params = getQueryParams();
+            if (params.paket) {
+                const paketSelect = document.getElementById('paket');
+                for (let i = 0; i < paketSelect.options.length; i++) {
+                    if (paketSelect.options[i].value === params.paket) {
+                        paketSelect.selectedIndex = i;
+                        break;
+                    }
+                }
+                document.getElementById('harga').value = params.harga;
+                document.getElementById('tanggal').value = params.tanggal;
+                generateQRCode(params.paket, params.harga);
+            }
+        }
+
+        function generateQRCode(paket, harga) {
+            const qr = new QRious({
+                element: document.getElementById('qr-container'),
+                value: `Paket: ${paket}\nHarga: Rp ${harga}`,
+                size: 150,
+                background: 'white',
+                foreground: '#b88c4e'
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', prefillForm);
+
+        function submitForm(event) {
+            event.preventDefault();
+            const form = document.getElementById('transaksiForm');
+            
+            // Validasi dasar
+            if (!form.checkValidity()) {
+                alert('Silakan lengkapi semua field yang diperlukan.');
+                return;
+            }
+
+            const formData = new FormData(form);
+            const params = new URLSearchParams();
+            formData.forEach((value, key) => {
+                params.append(key, value);
+            });
+
+            // Arahkan ke halaman invoice
+            try {
+                window.location.href = 'INVOICEFIX.html?' + params.toString();
+            } catch (error) {
+                console.error('Terjadi kesalahan saat memproses formulir:', error);
+                alert('Terjadi kesalahan. Silakan coba lagi.');
+            }
+        }
+    </script>
+</body>
+</html>
